@@ -51,11 +51,16 @@
     flex-basis: calc((var(--_panel-padding)*2) + var(--_button-size));
     overflow: hidden;    
     padding: var(--_panel-padding);
-    border-radius: 100vw;
+    border-radius: calc(((var(--_panel-padding)*2) + var(--_button-size)) / 2);
   }
 
   .accordion-panel:has([aria-expanded="true"]){
-    flex-basis: 5000%;
+    flex-basis: clamp(15rem, 40vh, 20rem);
+  }
+
+  .accordion-content > p {
+    transform: translateY(2rem);
+    opacity: 0;
   }
 
   .accordion-image{
