@@ -52,6 +52,8 @@
     overflow: hidden;    
     padding: var(--_panel-padding);
     border-radius: calc(((var(--_panel-padding)*2) + var(--_button-size)) / 2);
+
+    transition: flex-basis 500ms ease-in-out;
   }
 
   .accordion-panel:has([aria-expanded="true"]){
@@ -61,6 +63,12 @@
   .accordion-content > p {
     transform: translateY(2rem);
     opacity: 0;
+    transition: transform 1000ms, opacity 1000ms ease-in-out;
+  }
+
+  .accordion-panel:has([aria-expanded="true"]) p{
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .accordion-image{
